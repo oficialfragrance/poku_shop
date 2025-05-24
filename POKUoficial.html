@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POKU - A revolução no cuidado íntimo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #faf9f7;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    /* Cabeçalho */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #121212;
+      color: #f9f9f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li a {
+      color: #f9f9f9;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #9b59b6;
+      border-bottom: 2px solid #9b59b6;
+    }
+    /* Hero Section */
+    #hero {
+      margin-top: 70px;
+      position: relative;
+      height: 90vh;
+      background: linear-gradient(to right, rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.4)), url('/mnt/data/1147270c-22ad-487f-b7d5-17f4be3f5028.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5rem;
+      color: #f4e6ff;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 1.5s ease forwards;
+    }
+    #hero h1 {
+      font-size: 4rem;
+      margin-bottom: 0.3rem;
+      font-weight: 900;
+      letter-spacing: 6px;
+    }
+    #hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    #hero button {
+      background-color: #9b59b6;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px rgba(155, 89, 182, 0.5);
+    }
+    #hero button:hover {
+      background-color: #7d3f98;
+    }
+    /* Sobre */
+    #sobre {
+      max-width: 1000px;
+      margin: 5rem auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 0 2rem;
+    }
+    #sobre img {
+      flex: 1;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+    #sobre img:hover {
+      transform: scale(1.05);
+    }
+    #sobre div {
+      flex: 1;
+    }
+    #sobre h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #5e2b78;
+    }
+    #sobre p {
+      font-size: 1.2rem;
+      color: #4a4a4a;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    /* Produto */
+    #produto {
+      background-color: #f4f1f7;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    #produto h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #5e2b78;
+    }
+    #produto img {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    #produto img:hover {
+      transform: scale(1.1);
+    }
+    #produto p {
+      font-size: 1.5rem;
+      color: #222;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    /* Comprar */
+    #comprar {
+      max-width: 500px;
+      margin: 4rem auto 8rem;
+      padding: 2rem 3rem;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #comprar h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #5e2b78;
+      margin-bottom: 2rem;
+    }
+    #comprar form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    #comprar label {
+      font-weight: 600;
+      color: #555;
+      text-align: left;
+    }
+    #comprar input {
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1.5px solid #ccc;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    #comprar input:focus {
+      outline: none;
+      border-color: #9b59b6;
+      box-shadow: 0 0 8px rgba(155,89,182,0.4);
+    }
+    #comprar button {
+      margin-top: 1.5rem;
+      padding: 1rem 0;
+      background-color: #9b59b6;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px rgba(155, 89, 182, 0.5);
+    }
+    #comprar button:hover {
+      background-color: #7d3f98;
+    }
+    /* Rodapé */
+    footer {
+      background-color: #121212;
+      color: #f9f9f9;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    footer a {
+      color: #9b59b6;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #7d3f98;
+    }
+    /* Animações */
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    /* Responsividade */
+    @media (max-width: 900px) {
+      #sobre {
+        flex-direction: column;
+        padding: 0 1rem;
+      }
+      #sobre img {
+        max-width: 90vw;
+        margin-bottom: 2rem;
+      }
+      #hero {
+        padding-left: 2rem;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+      #hero h1 {
+        font-size: 3rem;
+      }
+      #hero p {
+        font-size: 1.1rem;
+        max-width: 80vw;
+        margin: 1rem 0 2rem 0;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+      #hero h1 {
+        font-size: 2.5rem;
+      }
+      #comprar {
+        padding: 1.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>POKU Shop</div>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#produto">Produto</a></li>
+        <li><a href="#comprar">Comprar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h1>POKU</h1>
+    <p>A revolução no cuidado íntimo</p>
+    <button onclick="document.getElementById('comprar').scrollIntoView({behavior: 'smooth'})">Comprar Agora</button>
+  </section>
+
+  <section id="sobre">
+    <img src="rótulo.jpg" alt="Fragrância POKU" />
+    <div>
+      <h2>Sobre POKU</h2>
+      <p>POKU é mais do que uma fragrância - é uma revolução no cuidado íntimo. Criada para quem acredita que a sensualidade está nos detalhes, POKU foi desenvolvido especialmente para a região do rabo, oferecendo frescor e confiança.</p>
+      <p>Inspirado na ousadia de quem não tem medo de ser diferente, POKU é ideal para ocasiões especiais, dias atribulados ou simplesmente para se sentir bem consigo mesmo.</p>
+    </div>
+  </section>
+
+  <section id="produto">
+    <h2>O Produto</h2>
+    <img src="poku.jpg"/>
+    <p><strong>Preço: 29,90€</strong></p>
+  </section>
+
+  <section id="comprar">
+    <h2>Comprar Agora</h2>
+    <form onsubmit="event.preventDefault(); alert('Obrigado pela sua compra, ' + document.getElementById('nome').value + '!');">
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" name="nome" required placeholder="Seu nome" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="email@exemplo.com" />
+      <label for="endereco">Endereço</label>
+      <input type="text" id="endereco" name="endereco" required placeholder="Rua, número, cidade" />
+      <button type="submit">Adicionar ao Carrinho - 29,90€</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 POKU Oficial - pokushop.com</p>
+  </footer>
+</body>
+</html>
